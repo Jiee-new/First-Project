@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dhamar | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Space Grotesk',sans-serif;
+    background:#FFF7D6;
+    color:#111;
+    line-height:1.6;
+}
+
+/* ====================== */
+
+:root{
+    --yellow:#FFD93D;
+    --pink:#FF5D8F;
+    --blue:#54A9FF;
+    --green:#8DF56A;
+    --orange:#FF9B42;
+    --black:#111;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+h1,h2,h3{
+    line-height:1;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+    display:inline-block;
+    background:var(--yellow);
+    border:4px solid var(--black);
+    box-shadow:8px 8px 0 var(--black);
+    padding:12px 18px;
+}
+
+p{
+    font-size:1rem;
+}
+
+/* ====================== */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:white;
+    border-bottom:4px solid black;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.6rem;
+}
+
+.logo span{
+    color:#ff0066;
+}
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:700;
+}
+
+nav a:hover{
+    color:#ff0066;
+}
+
+/* ====================== */
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    margin:25px 0;
+    font-size:1.1rem;
+}
+
+.badge{
+    display:inline-block;
+    background:var(--green);
+    border:4px solid black;
+    box-shadow:6px 6px 0 black;
+    padding:8px 14px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero-image{
+    background:var(--pink);
+    border:5px solid black;
+    box-shadow:12px 12px 0 black;
+    height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9rem;
+    user-select:none;
+}
+
+/* ====================== */
+
+.button{
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+    background:var(--yellow);
+    padding:16px 28px;
+    border:4px solid black;
+    box-shadow:7px 7px 0 black;
+    font-weight:800;
+    transition:.15s;
+}
+
+.button:hover{
+    transform:translate(5px,5px);
+    box-shadow:2px 2px 0 black;
+}
+
+/* ====================== */
+
+.about-box{
+    background:white;
+    border:4px solid black;
+    box-shadow:10px 10px 0 black;
+    padding:30px;
+}
+
+/* ====================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border:4px solid black;
+    box-shadow:8px 8px 0 black;
+    padding:25px;
+    transition:.15s;
+    cursor:pointer;
+}
+
+.card h3{
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.card:nth-child(1){
+    background:var(--blue);
+}
+
+.card:nth-child(2){
+    background:var(--green);
+}
+
+.card:nth-child(3){
+    background:var(--orange);
+}
+
+.card:nth-child(4){
+    background:var(--pink);
+}
+
+.card.active,
+.card:hover{
+    transform:translate(-5px,-5px) rotate(-1deg);
+    box-shadow:14px 14px 0 black;
+}
+
+/* ====================== */
+
+.project{
+    background:white;
+    border:4px solid black;
+    box-shadow:8px 8px 0 black;
+    overflow:hidden;
+    transition:.15s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    box-shadow:14px 14px 0 black;
+}
+
+.project-top{
+    height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:4rem;
+    border-bottom:4px solid black;
+}
+
+.project:nth-child(1) .project-top{
+    background:var(--yellow);
+}
+
+.project:nth-child(2) .project-top{
+    background:var(--blue);
+}
+
+.project:nth-child(3) .project-top{
+    background:var(--pink);
+}
+
+.project-body{
+    padding:22px;
+}
+
+.project-body h3{
+    margin-bottom:10px;
+}
+
+/* ====================== */
+
+.contact-box{
+    background:var(--yellow);
+    border:5px solid black;
+    box-shadow:10px 10px 0 black;
+    padding:35px;
+    text-align:center;
+}
+
+.contact-box p{
+    margin:12px 0;
+}
+
+.contact-btn{
+    margin-top:18px;
+}
+
+/* ====================== */
+
+footer{
+    text-align:center;
+    padding:35px;
+    font-weight:700;
+}
+
+/* ====================== */
+
+@media(max-width:900px){
+
+.hero{
+    grid-template-columns:1fr;
+}
+
+.hero-image{
+    height:320px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+nav ul{
+    justify-content:center;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:18px;
+}
+
+}
+
+@media(max-width:500px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.hero-image{
+    font-size:6rem;
+}
+
+h2{
+    font-size:2rem;
+}
+
+.button{
+    width:100%;
+    text-align:center;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container navbar">
+
+<div class="logo">
+DHAMAR<span>.</span>
+</div>
+
+<ul>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#skills">Skill</a></li>
+<li><a href="#projects">Proyek</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section>
+
+<div class="container hero">
+
+<div>
+
+<div class="badge">
+👋 Halo, Selamat Datang!
+</div>
+
+<h1>
+Saya <br>
+<span style="background:#FFD93D;border:4px solid black;padding:2px 10px;">Dhamar</span>
+</h1>
+
+<p>
+Saya adalah seseorang yang tertarik pada dunia teknologi, web development,
+desain antarmuka, dan berbagai proyek kreatif digital.
+Saya senang belajar hal baru serta membuat sesuatu yang bermanfaat dan menarik.
+</p>
+
+<a href="#projects" class="button">
+Lihat Portofolio →
+</a>
+
+</div>
+
+<div class="hero-image">
+😎
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2>Tentang Saya</h2>
+
+<div class="about-box">
+
+<p>
+Halo! Nama saya <b>Dhamar</b>. Saya memiliki minat besar dalam dunia teknologi,
+pemrograman, serta desain website modern.
+Saya senang mengeksplorasi HTML, CSS, JavaScript, dan terus mengembangkan kemampuan
+untuk membuat website yang cepat, menarik, dan responsif.
+</p>
+
+<br>
+
+<p>
+Fokus saya adalah membangun pengalaman pengguna yang menyenangkan dengan tampilan
+unik seperti Neo-Brutalism yang berani, penuh karakter, dan mudah digunakan.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2>Skill</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 HTML5</h3>
+<p>Membangun struktur website modern yang rapi dan semantik.</p>
+</div>
+
+<div class="card">
+<h3>🎨 CSS3</h3>
+<p>Mendesain tampilan responsif dengan gaya kreatif dan unik.</p>
+</div>
+
+<div class="card">
+<h3>⚡ JavaScript</h3>
+<p>Membuat website menjadi interaktif dan lebih hidup.</p>
+</div>
+
+<div class="card">
+<h3>🚀 Problem Solving</h3>
+<p>Belajar teknologi baru dan menyelesaikan tantangan secara efektif.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2>Proyek</h2>
+
+<div class="grid">
+
+<div class="project">
+
+<div class="project-top">
+🌐
+</div>
+
+<div class="project-body">
+
+<h3>Website Portfolio</h3>
+
+<p>
+Website pribadi modern dengan desain Neo-Brutalism yang responsif.
+</p>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-top">
+📱
+</div>
+
+<div class="project-body">
+
+<h3>Landing Page</h3>
+
+<p>
+Landing page sederhana dengan performa tinggi dan tampilan menarik.
+</p>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-top">
+💡
+</div>
+
+<div class="project-body">
+
+<h3>Eksperimen UI</h3>
+
+<p>
+Kumpulan eksplorasi desain antarmuka modern menggunakan HTML, CSS, dan JavaScript.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<h2>Kontak</h2>
+
+<div class="contact-box">
+
+<h3>Mari Terhubung!</h3>
+
+<p>
+Terima kasih telah mengunjungi portofolio saya.
+Jika ingin berdiskusi atau bekerja sama, jangan ragu untuk menghubungi saya.
+</p>
+
+<a class="button contact-btn" href="mailto:example@email.com">
+📧 Hubungi Saya
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 • Dibuat oleh Dhamar menggunakan HTML, CSS & JavaScript
+</footer>
+
+<script>
+// Efek klik pada card skill
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("click",()=>{
+        card.classList.toggle("active");
+    });
+});
+
+// Animasi tombol
+document.querySelectorAll(".button").forEach(btn=>{
+    btn.addEventListener("mouseenter",()=>{
+        btn.style.background="#FF5D8F";
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+        btn.style.background="#FFD93D";
+    });
+});
+
+// Efek muncul saat scroll
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.animate([
+                {
+                    opacity:0,
+                    transform:"translateY(40px)"
+                },
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+            ],{
+                duration:500,
+                easing:"ease-out",
+                fill:"forwards"
+            });
+
+            observer.unobserve(entry.target);
+        }
+    });
+},{
+    threshold:0.15
+});
+
+document.querySelectorAll("section, .card, .project").forEach(el=>{
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
